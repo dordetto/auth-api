@@ -1,10 +1,6 @@
 import { registerUserService, loginUserService } from '../services/auth.service.js';
 import { validatePassword } from '../utils/validation.js';
 
-/**
- * POST /auth/register
- * Create a new user
- */
 export async function registerUser(req, res) {
   try {
     const { username, password } = req.body || {};

@@ -3,9 +3,7 @@ import 'dotenv/config';
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-/**
- * Middleware to validate JWT token in Authorization header
- */
+// Middleware to validate JWT token in Authorization header
 export function authenticateJWT(req, res, next) {
   const authHeader = req.headers.authorization;
 

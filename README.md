@@ -15,9 +15,10 @@ A authentication API built with Node.js, Express, Redis, and JWT.
 
 - Using .ENV file. Attached to the project to test proposed
 - Passwords are hashed using bcrypt (popular lib)
-- JWT tokens expire after 15 minutes (.env file)
+- JWT tokens expire after 15 minutes (.env file), was not create a refresh function
+- Some console.log was not removed, to help tests and demostration
 - Create and List users endpoints require authentication
-- The seed file with user/password it's not best solution, used for simple project
+- The seed file with user/password (admin / Admin123) is not the best solution, used to demonstrate the API 
 - Added eslint to help find errors
 - List users API handle with cache
 

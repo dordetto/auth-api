@@ -14,7 +14,7 @@ export async function seedFirstUser() {
   try {
     console.log('Checking for existing users.');
 
-    // Count all keys matching user:<username>
+    // Count all keys matching user:<username>, only to decide if we need to seed
     const userKeys = await client.keys('user:*');
 
     if (userKeys.length > 0) {
@@ -24,20 +24,18 @@ export async function seedFirstUser() {
       return;
     }
 
-    const adminUsername = 'admin';
-    const adminPassword = 'Admin123';
+    const firstUsername = 'admin';
+    const firstPassword = 'Admin123';
 
-    // Hash admin password
-    const hashedPassword = await bcrypt.hash(adminPassword, 12);
+    const hashedPassword = await bcrypt.hash(firstPassword, 12);
 
-    // Create Redis user at key: user:admin
-    await client.hSet(`user:${adminUsername}`, {
+    await client.hSet(`user:${firstUsername}`, {
       password: hashedPassword,
     });
 
-    console.log('Admin user created successfully!');
+    console.log('First user created successfully!');
   } catch (err) {
-    console.error('Error creating admin user:', err);
+    console.error('Error creating first user:', err);
   } finally {
     await client.quit();
   }

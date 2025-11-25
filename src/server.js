@@ -5,7 +5,7 @@ import userRoutes from './routes/user.routes.js';
 
 //Workaround that create first user because this solution need to be authenticated to create users
 import { seedFirstUser } from '../seed/01-first_user.seed.js'; 
-seedFirstUser(); //Run the seed function on server start
+seedFirstUser();
 
 dotenv.config();
 
