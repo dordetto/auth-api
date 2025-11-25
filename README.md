@@ -61,36 +61,36 @@ The API will be available at `http://localhost:3000`
 
 ## API Endpoints
 
-POST /auth/login
-POST /auth/register
+POST /auth/login  
+POST /auth/register  
 GET /users (Extra, to test cache)
 
 ### API Endpoints - Details
 
 #### Login
 
-POST /auth/login
-Content-Type: application/json
-json
-{
-"username": "admin",
-"password": "Admin123"
+POST /auth/login  
+Content-Type: application/json  
+json  
+{  
+"username": "admin",  
+"password": "Admin123"  
 }
 
 #### Register a New User
 
-POST /auth/register
-Content-Type: application/json
-Authorization: Bearer <token>
-json
-{
-"username": "new_user",
-"password": "Password123"
+POST /auth/register  
+Content-Type: application/json  
+Authorization: Bearer <token>  
+json  
+{  
+"username": "new_user",  
+"password": "Password123"  
 }
 
 #### List All Users
 
-GET /users
+GET /users  
 Authorization: Bearer <token>
 
 ## Example Usage in Terminal
